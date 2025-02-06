@@ -1,0 +1,35 @@
+def calcular_score(resposta_do_usuario):
+    score = 0
+    
+    lista_palavras_positivas = ['muito bom', 'bem', 'bastante legal', 'ótimo']
+    lista_negativa = ['péssimo', 'horrível', 'muito ruim', 'bastante ruim']
+    lista_muito_negativa = ['ruim']
+    lista_muito_positiva = ['bom', 'legal']
+    lista_intensificador = ['muito', 'bastante']
+    
+    palavras = resposta_do_usuario.lower().split()
+    
+    for i, palavra in enumerate(palavras):
+        # Checar listas específicas
+        if palavra in lista_palavras_positivas:
+            score += 1
+        elif palavra in lista_negativa:
+            score -= 1
+        elif palavra in lista_muito_negativa:
+            # Verificar se é precedida por um intensificador
+            if i > 0 and palavras[i - 1] in lista_intensificador:
+                score -= 2
+            else:
+                score -= 1
+        elif palavra in lista_muito_positiva:
+            # Verificar se é precedida por um intensificador
+            if i > 0 and palavras[i - 1] in lista_intensificador:
+                score += 2
+            else:
+                score += 1
+    
+    print(f'O seu texto possui um score de {score}.')
+
+# Entrada do usuário
+resposta_do_usuario = input('Me diga como está seu dia: ')
+calcular_score(resposta_do_usuario)

@@ -1,0 +1,17 @@
+def km(k):
+    return(k * 1.609)
+    
+k = int(input('coloque a velocidade em milhas:'))
+
+print(f'a velocidade em milhas({k}) para km é {km(k)}')
+
+
+----------------------------------------------------------------
+
+
+def km(k):
+    return(k / 1.609)
+    
+k = int(input('coloque a velocidade em Km:'))
+
+print(f'a velocidade em km({k}) para milhas é {km(k)}')

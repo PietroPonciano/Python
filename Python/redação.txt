@@ -1,0 +1,257 @@
+a = float(input('Quantas AF`s você teve? '))
+
+if a == 1:
+    b = float(input('Qual sua nota na AF1? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota = (b+c+e)
+    
+    notaFinal = (nota / 3)
+    
+    print(f'sua nota final é {notaFinal}')
+
+
+if a == 2:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b)
+    
+    nota3= (nota2/2 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+
+if a == 3:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g)
+    
+    nota3= (nota2/3 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 4:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h)
+    
+    nota3= (nota2/4 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    
+    print(f'sua nota final é {notaFinal}')
+
+
+if a == 5:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i)
+    
+    nota3= (nota2/5 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+
+
+if a == 6:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    c = float(input('Qual sua nota na AA1? '))
+    
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j)
+    
+    nota3= (nota2/6 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 7:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    c = float(input('Qual sua nota na AA1? '))
+   
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k)
+    
+    nota3= (nota2/7 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 8:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    l = float(input('Qual sua nota na AF8? '))
+    c = float(input('Qual sua nota na AA1? '))
+    
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k+l)
+    
+    nota3= (nota2/8 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 9:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    l = float(input('Qual sua nota na AF8? '))
+    m = float(input('Qual sua nota na AF9? '))
+    c = float(input('Qual sua nota na AA1? '))
+    
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k+l+m)
+    
+    nota3= (nota2/9 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 10:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    l = float(input('Qual sua nota na AF8? '))
+    m = float(input('Qual sua nota na AF9? '))
+    n = float(input('Qual sua nota na AF10? '))
+    c = float(input('Qual sua nota na AA1? '))
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k+l+m+n)
+    
+    nota3= (nota2/10 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 11:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    l = float(input('Qual sua nota na AF8? '))
+    m = float(input('Qual sua nota na AF9? '))
+    n = float(input('Qual sua nota na AF10? '))
+    o = float(input('Qual sua nota na AF11? '))
+    c = float(input('Qual sua nota na AA1? '))
+    e = float(input('Qual sua nota na SIM1'))
+    
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k+l+m+n+o)
+    
+    nota3= (nota2/11 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')
+    
+if a == 12:
+    b = float(input('Qual sua nota na AF1? '))
+    f = float(input('Qual sua nota na AF2? '))
+    g = float(input('Qual sua nota na AF3? '))
+    h = float(input('Qual sua nota na AF4? '))
+    i = float(input('Qual sua nota na AF5? '))
+    j = float(input('Qual sua nota na AF6? '))
+    k = float(input('Qual sua nota na AF7? '))
+    l = float(input('Qual sua nota na AF8? '))
+    m = float(input('Qual sua nota na AF9? '))
+    n = float(input('Qual sua nota na AF10? '))
+    o = float(input('Qual sua nota na AF11? '))
+    p = float(input('Qual sua nota na AF12? '))
+    c = float(input('Qual sua nota na AA1? '))
+    e = float(input('Qual sua nota na SIM1'))
+    
+    nota1 = (c+e)
+    
+    nota2 = (f+b+g+h+i+j+k+l+m+n+o+p)
+    
+    nota3= (nota2/12 + nota1)
+    
+    notaFinal= (nota3/3)
+    
+    print(f'sua nota final é {notaFinal}')

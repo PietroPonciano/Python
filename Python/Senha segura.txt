@@ -1,0 +1,44 @@
+import random
+
+# Função para substituir caracteres especiais
+def substituir_caracteres(texto):
+    texto = texto.replace("a", "@")
+    texto = texto.replace("e", "3")
+    texto = texto.replace("i", "1")
+    texto = texto.replace("o", "0")
+    texto = texto.replace("s", "$")
+    return texto
+
+# Solicitar ao usuário uma frase
+frase = input("Digite uma frase para gerar sua senha: ")
+
+# Verificar se a frase tem pelo menos duas palavras
+palavras = frase.split()
+if len(palavras) < 2:
+    print("A frase deve conter pelo menos duas palavras separadas por espaços.")
+else:
+    # Converter palavras para minúsculas (opcional)
+    palavras = [palavra.lower() for palavra in palavras]
+    
+    # Substituir caracteres especiais
+    palavras_substituidas = [substituir_caracteres(palavra) for palavra in palavras]
+    
+    # Separar letras, números e caracteres especiais
+    letras = ''.join([c for c in ''.join(palavras_substituidas) if c.isalpha()])
+    numeros = ''.join([c for c in ''.join(palavras_substituidas) if c.isdigit()])
+    especiais = ''.join([c for c in ''.join(palavras_substituidas) if not c.isalnum()])
+    
+    # Ordenar as letras em ordem alfabética
+    letras_ordenadas = ''.join(sorted(letras))
+    
+    # Concatenar letras, números e caracteres especiais
+    senha = letras_ordenadas + numeros + especiais
+    
+    # Gerar um número aleatório de 2 a 4 dígitos
+    numero_aleatorio = random.randint(10, 9999)
+    
+    # Adicionar o número aleatório ao final da senha
+    senha += str(numero_aleatorio)
+    
+    # Exibir a senha gerada
+    print("Sua senha segura é:", senha)

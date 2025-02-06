@@ -1,0 +1,139 @@
+import random
+import time
+import re
+import json
+
+class AssistenteDeBemEstar:
+    def __init__(self):
+        self.historico = []
+        self.memoria = {}  # Para armazenar dados a longo prazo
+        self.lista_palavras_positivas = ['ótimo', 'excelente', 'muito bom', 'feliz', 'alegre', 'animado']
+        self.lista_palavras_negativas = ['péssimo', 'triste', 'horrível', 'muito ruim', 'cansado', 'desanimado']
+        self.lista_palavras_neutras = ['ok', 'normal', 'mais ou menos', 'poderia ser melhor']
+        self.lista_intensificador = ['muito', 'bastante', 'extremamente']
+        self.lista_negacao = ['não', 'nao', 'nunca', 'não sei', 'não tenho certeza']
+        self.respostas_positivas = [
+            "Que bom saber disso! 😊 Continue assim! ",
+            "Seu dia parece ótimo! 🌟 Fico muito feliz por você! ",
+            "Parece que as coisas estão indo bem. Que maravilha! 🌈"
+        ]
+        self.respostas_neutras = [
+            "Parece que foi um dia equilibrado. 😊",
+            "Nem tão bom, nem tão ruim, né? Espero que você tenha algo bom planejado para amanhã. 🌞",
+            "Que tal fazer algo divertido para relaxar? 🍀"
+        ]
+        self.respostas_negativas = [
+            "Sinto muito por isso. 😔 Lembre-se, dias ruins passam!",
+            "Tudo bem sentir-se assim. Amanhã pode ser um novo começo. 💪",
+            "Força! Estou aqui para te ouvir sempre que precisar. 🌻"
+        ]
+        self.contexto_usuario = {}  # Dicionário para armazenar dados personalizados
+        
+        self.algo_mais = [
+            "Posso ajudar em algo mais?",
+            "Precisa de mais alguma coisa?"
+            
+            ]
+
+    def saudar_usuario(self):
+        print("Olá! Eu sou sua assistente de bem-estar. 😊")
+        print("Estou aqui para ouvir, ajudar e acompanhar como você está se sentindo.")
+        time.sleep(2)
+
+    def analisar_sentimento(self, resposta):
+        resposta = resposta.lower()
+        score = 0
+        for frase in self.lista_palavras_positivas:
+            if frase in resposta:
+                score += 2
+        for frase in self.lista_palavras_negativas:
+            if frase in resposta:
+                score -= 2
+        palavras = resposta.split()
+        for i, palavra in enumerate(palavras):
+            if palavra in self.lista_intensificador:
+                if i + 1 < len(palavras):
+                    proxima_palavra = palavras[i + 1]
+                    if proxima_palavra in self.lista_palavras_positivas:
+                        score += 1
+                    elif proxima_palavra in self.lista_palavras_negativas:
+                        score -= 1
+            elif palavra in self.lista_palavras_positivas:
+                score += 1
+            elif palavra in self.lista_palavras_negativas:
+                score -= 1
+            elif palavra in self.lista_palavras_neutras:
+                score += 0
+        return score
+
+    def oferecer_resposta(self, score):
+        if score > 2:
+            return random.choice(self.respostas_positivas)
+        elif score >= 0:
+            return random.choice(self.respostas_neutras)
+        else:
+            return random.choice(self.respostas_negativas)
+
+    def oferecer_dicas(self, score):
+        print("\nAqui estão algumas sugestões para você:")
+        if score > 2:
+            print("- Aproveite o momento positivo! Faça algo que você ama. 🎉")
+            print("- Ouça uma música alegre para aumentar ainda mais sua energia! 🎶")
+        elif score >= 0:
+            print("- Experimente fazer algo que te relaxe, como assistir a um filme ou ler um livro. 📖")
+            print("- Tire um tempo para refletir sobre coisas boas do dia. 🌼")
+        else:
+            print("- Experimente técnicas de mindfulness ou respiração para aliviar o estresse. 🧘")
+            print("- Converse com alguém de confiança. Pode fazer bem compartilhar. 💬")
+
+    def registrar_memoria(self, chave, valor):
+        self.memoria[chave] = valor
+        print(f"\nMemorizando: {chave} = {valor}")
+
+    def carregar_memoria(self):
+        if self.memoria:
+            print("\nCarregando sua memória de interações passadas...")
+            for chave, valor in self.memoria.items():
+                print(f"{chave}: {valor}")
+        else:
+            print("\nAinda não temos muitas memórias, vamos construir juntos!")
+
+    def ajustar_respostas_personalizadas(self):
+        # Personaliza as respostas com base nas preferências do usuário
+        nome_usuario = self.contexto_usuario.get('nome', 'Usuário')
+        print(f"\n{nome_usuario}, vou começar a adaptar minhas respostas de acordo com suas preferências!")
+
+    def calcular_score(self, resposta):
+        score = self.analisar_sentimento(resposta)
+        print("\nAnalisando sua resposta...")
+        time.sleep(2)
+        print(f"Seu texto possui um score de {score}.")
+        print(self.oferecer_resposta(score))
+
+        while score < 2:
+            resposta_usuario = input("\nParece que você tem mais para compartilhar. 📝 Quer continuar? Me conte mais sobre seu dia (Digite 'não' para encerrar): ")
+            if any(neg in resposta_usuario.lower() for neg in self.lista_negacao):
+                print("Tudo bem! Sempre estarei aqui se precisar. 🌟")
+                break
+            score = self.analisar_sentimento(resposta_usuario)
+            print(self.oferecer_resposta(score))
+            self.registrar_memoria('Última resposta', resposta_usuario)
+
+        resposta_dicas = input("\nGostaria de receber algumas dicas? (Digite 'sim' para dicas ou 'não' para encerrar): ")
+        if resposta_dicas.lower() == 'sim':
+            self.oferecer_dicas(score)
+        else:
+            print("Tudo bem! Fico feliz por poder conversar com você. 🌟")
+
+    def iniciar(self):
+        self.saudar_usuario()
+        nome = input("\nQual é o seu nome? ")
+        self.contexto_usuario['nome'] = nome
+        resposta = input("\nComo está o seu dia hoje? ")
+        self.calcular_score(resposta)
+        self.carregar_memoria()
+        self.ajustar_respostas_personalizadas()
+        print("\nObrigada por conversar comigo. Estou aqui sempre que precisar. 🌟")
+
+assistente = AssistenteDeBemEstar()
+assistente.iniciar()

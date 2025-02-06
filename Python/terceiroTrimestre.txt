@@ -1,0 +1,12 @@
+a = float(input('Qual trimestre você está? '))
+
+if a == 3:
+    b = float(input('Qual sua nota final do primeiro trimestre? '))
+    c = float(input('Qual sua nota final do segundo trimestre? '))
+    d = 210
+    
+    nota = (b+c)
+    
+    notaFinal = (d - nota)
+    
+    print(f'você precisa de {notaFinal} para passar de ano')

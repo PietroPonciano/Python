@@ -1,0 +1,16 @@
+def ms(m):
+  return(m * 3.6)
+  
+m = int(input('coloque a velocidade em M/s:'))
+
+print(f'a velocidade em m/s({m}) convertida em Km é {ms(m)}')
+
+
+----------------------------------------------------------------
+
+def ms(m):
+  return(m / 3.6)
+  
+m = int(input('coloque a velocidade em Km/h:'))
+
+print(f'a velocidade em Km/h({m}) convertida em m/s é {ms(m)}')
