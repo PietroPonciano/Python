@@ -1,0 +1,1 @@
+Este script Python consiste em uma adaptação do código fonte publicado pelo SERPRO, que disponibilizou o cálculo do CNPJ alfanumérico. O objetivo desta versão é integrar os códigos fornecidos, resultando em uma solução mais concisa e eficiente.
